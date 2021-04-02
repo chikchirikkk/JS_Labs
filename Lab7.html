@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<html lang="ru">
+<head>
+	<title>Упражнение 7</title>
+	<meta charset="utf-8">
+  <script type="text/javascript">
+    function sorting(){
+      lessons = new Array("алгебра", "геометрия", "информатика", "физика", "русский", "литература", "английский язык", "история");
+      document.write("<strong>Предметы: </strong>"+lessons+".");
+      t = new Array();
+      g = new Array();
+      t  = lessons.slice(0,4);
+      g = lessons.slice(4,8);
+      for(var i = 0; i < g.length; i++)
+      document.write("<tr><td>"+t[i]+"</td><td>"+g[i]+"</td></tr>"); 
+    }
+  </script>
+<style>
+    td:last-child{ border-left:1px solid black;}
+</style>
+</head>
+<body>
+  		<table>
+        <tr>
+          <th>Технические предметы</th>
+          <th>Гуманитарные предметы</th>
+        </tr>
+     <script type="text/javascript">
+            sorting();
+     </script>
+
+     </table>
+
+      <a  href="Lab6.html"><button>Упражнение №6</button></a>
+</body>
+</html>
