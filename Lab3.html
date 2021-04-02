@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<html lang="ru">
+<head>
+	<title>Задание 3</title>
+	<meta charset="utf-8">
+  <style type="text/css">
+    .name{
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  
+<script type="text/javascript">
+
+   function name(){
+    name = prompt("Ваше имя:");
+    text  = "<div class='name'> Ваше имя: "+name+"</div>";
+    document.body.innerHTML = text;
+  }
+
+  function restart(){
+  if(confirm("Начать заново?")){
+
+  if(confirm("Не надоело?")){
+    name();
+    setTimeout(rename,1000);
+  }
+  else {
+    alert("Ну и правильно!");
+  }
+}
+}
+
+  name();
+  setTimeout(restart,1000);
+</script>
+
+      <a  href="Lab2.html"><button>Упражнение №2</button></a>
+
+      <a href="Lab4.html"><button>Упражнение №4</button></a>
+
+</body>
+</html>
