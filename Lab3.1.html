@@ -1,0 +1,63 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+			<script>
+				let tek = 5;
+				function one(str) {
+					if (str.length==0) {
+						document.getElementById("news").innerHTML="";
+						return;
+						  }
+					  if (window.XMLHttpRequest) {
+						xmlhttp=new XMLHttpRequest();
+						 } else { 
+							xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+								  }
+						  xmlhttp.onreadystatechange=function() {
+					if (this.readyState==4 && this.status==200) {
+						  document.getElementById("news").innerHTML=this.responseText;
+						}
+					  }
+					xmlhttp.open("GET","1.php?tek="+tek,true);
+					   xmlhttp.send();
+					   tek+=5;
+					}
+			 </script>
+			<div style="width: 400px; height: 500px; background-color: pink; padding:10px; margin-top: 5px;">
+				<p style="font-weight: bold; font-size: 30px">«Я же вождь!»</p>
+				Как Ким Ир Сен разрушил экономику Северной Кореи и привел страну к полной изоляции<br><br>
+				<img src="1.jpg" width="400px"><br>
+			</div>
+			<div style="width: 400px; height: 500px;background-color: pink; padding:10px;  margin-top: 5px;">
+				<p style="font-weight: bold; font-size: 30px">Самый дерзкий побег</p>
+				Как советский летчик угнал самолет с секретной немецкой базы и сорвал планы Гитлера<br><br>
+				<img src="2.jpg" width="400px"><br>
+			</div>
+			<div style="width: 400px; height: 500px;background-color: pink; padding:10px;  margin-top: 5px;">
+				<p style="font-weight: bold; font-size: 30px">Безупречный воин</p>
+				Контрабандист со связями в ЦРУ мечтал покорить мир, но прославился из-за медведя под кокаином<br><br>
+				<img src="3.webp" width="400px"><br>
+			</div>
+			<div style="width: 400px; height: 500px; background-color: pink; padding:10px; margin-top: 5px;">
+				<p style="font-weight: bold; font-size: 30px">«Мы никогда не ссорились»</p>
+				Билл Гейтс расстался с женой после 27 лет брака. Их развод может стать самым дорогим в истории<br><br>
+				<img src="4.jpg" width="400px"><br>
+			</div>
+			<div style="width: 400px; height: 500px; background-color: pink; padding:10px;  margin-top: 5px;">
+				<p style="font-weight: bold; font-size: 30px">«Наши духи не злы, но суровы»</p>
+				Самая красивая девушка Якутии — о нападках хейтеров, вере в мистику и силы природы<br><br>
+				<img src="5.jpg" width="400px"><br>
+			</div><br>
+			<span id="news"></span>
+			<form>
+				<input onclick="one(this.value)" type="button" value="загрузить" >
+			</form>
+			<br>
+			</body>
+	</html> 
