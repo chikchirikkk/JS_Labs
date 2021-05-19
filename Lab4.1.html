@@ -1,0 +1,192 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="jquery-ui.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function(){
+			  $( function() {
+		$( document ).tooltip();
+	  } );
+	$("#accordion" ).accordion({  collapsible: true });  
+          $('#tabs').tabs(); 
+		  $('#dialog1').dialog({ autoOpen: false, width: 600 });
+      $('#dialog2').dialog({ autoOpen: false, width: 600 });
+      $('#dialog3').dialog({ autoOpen: false, width: 600 });
+	  $("#btn1").click(function(){ 
+        $( "#dialog1" ).dialog('open'); 
+      })
+      $("#btn2").click(function(){ 
+        $( "#dialog2" ).dialog('open'); 
+      })
+      $("#btn3").click(function(){ 
+        $( "#dialog3" ).dialog('open'); 
+      })
+      $('#slider1').slider({
+		    min: 1,
+	    	max: 10,
+        change: function (event, ui){
+            var val = $('#slider1').slider('value');
+            $('#sliderValue1').html(val);
+        }
+    });
+    $('#slider2').slider({
+		    min: 1,
+	    	max: 10,
+        change: function (event, ui){
+            var val = $('#slider2').slider('value');
+            $('#sliderValue2').html(val);
+        }
+    });
+    $('#slider3').slider({
+		    min: 1,
+	    	max: 10,
+        change: function (event, ui){
+            var val = $('#slider3').slider('value');
+            $('#sliderValue3').html(val);
+        }
+    });
+	$.datepicker.regional['ru'] = {
+	closeText: 'Закрыть',
+	prevText: 'Предыдущий',
+	nextText: 'Следующий',
+	currentText: 'Сегодня',
+	monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+	weekHeader: 'Не',
+	dateFormat: 'dd.mm.yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+	$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+		  $(".date").datepicker({ });
+		  var stol = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]; 
+	  $(".stol" ).click(function(){
+		$(".stol").autocomplete({ source: stol });
+	});
+	$(".puy" ).click(function(){
+		$('.dia').dialog('open'); })
+	$('.dia').dialog({ autoOpen: false, width: 300, buttons:{
+        "да": function(){ $( ".yes" ).dialog('open'),$('.dia').dialog('close');   }
+    }})
+	$( ".yes" ).dialog({autoOpen: false, width: 300});
+	$("#price1" ).click(function(){
+    var k = $('#slider1').slider('value');
+    var price = 4000*k;
+    document.getElementById('price1').value = price;
+  })
+  $("#price2" ).click(function(){
+    var k = $('#slider2').slider('value');
+    var price = 2300*k;
+    document.getElementById('price2').value = price;
+  })
+  $("#price3" ).click(function(){
+    var k = $('#slider3').slider('value');
+    var price = 2500*k;
+    document.getElementById('price3').value = price;
+  })
+
+
+  } )
+ 
+			 </script>
+			  <div class="dia" title="Подтвердите свой выбор">Все заполнено верно?</div>
+			  <div class="yes" title="Спасибо за покупку!">Покупайте билеты еще!</div>
+			<h2>Афиша мероприятий</h2>
+			<h3>Концертные площадки г.Уфы:</h3>
+			<span id="accordion">
+				<h3>Тинькофф Холл</h3> <div>
+				<p>Тинькофф Холл имеет мегазал «Колизео», «Клуб 11», рестораны Браухаус» и «Веранда», караоке-залы «Монро» и «Мафия»!
+				</div> 
+				<h3>Ресторан «Максимилианс»</h3> <div>
+				<p>Уфимский «Максимилианс» — часть сети клубных ресторанов, работающих в крупных городах России и заслуживших хорошую репутацию и любовь публики.<br>
+					Что отличает хороший ресторан? Стильный интерьер, умеющая веселиться публика и, конечно, вкусная и аппетитная еда и фирменный напиток!<br>
+					Ну и, конечно же, незабываемые концертные вечера!
+			  </p>
+				</div> 
+				<h3>MusicHall27</h3> <div>
+				<p>MusicHall27 - музыкальный ресторан в центре города. <br>
+					Музыка и гастрономия – две наших страсти, которыми мы готовы поделиться с каждым. Кто-то назовёт нашу кухню современной европейской и будет прав. Но не совсем. Слишком сухое определение для дела всей нашей жизни. <br> Команда #kitchen27 следит за гастротрендами, находит вдохновение в путешествиях и каждый сезон прыгает выше головы. Просто попробуйте!  </div> 
+				</span><br>
+				<h3>Афиша мероприятий:</h3>
+				<div id="tabs" style="width: 40%;"> <ul> 
+					<li><a href="#tabs-1">BrainStorm</a></li> 
+					<li><a href="#tabs-2">Звери</a></li> 
+					<li><a href="#tabs-3">Стендап: Дедищев, Чабдаров, Детков</a></li> </ul> 
+					<div id="tabs-1" style="background-color: bisque;"> <h2>BrainStorm 2.06.2021</h2> 
+					  <img src="https://www.ok-magazine.ru/files/media_wysiwyg/breinstorm.jpg" alt="" style=" width: 50%;">
+					  <p>MusicHall27 представляет<br>
+						группа <span style="font-weight: bold;">BrainStorm</span> со своей новой программой!<br>
+						<p>Цена: 4000р</p><br>
+						<button id="btn1">купить билет</button></p> 
+					  </div>
+					  <div id="tabs-2" style="background-color: #bfa99e;"> <h2>Звери 26.06.2021</h2> 
+						<img src="https://yandex.ru/images/_crpd/Uf47Fy232/035780Z-yLDl/fqj_GWrkEfROfyrDhaBbrr3PWBQgDWqKxpKiFEZ7yq5g0XR7XiQJC7KDK2Yrvw0QJJAPo2wMfaGQkNjjj4jF5W9N3lmfMIDxLurvMDYDzVx-bO_GJ49oLoanxyRXmm6qA2cQLArkT87Hcx1kHbgbcBCVqaLrfCl2tEJrYchoQmF7-q_LD3QAcO5um1BV0oxO_L88pHUeiV0n9lUU95-8i6OHhI6YJRyOFqAuVJ4quKKhxaix2pzapNVSWiDqyNIgq_uNyM6HECBtzHsCpREObA7vH9ZVX7tP5PenRjVs_JkgB-Q_KEScfFYjDwZOeghhwiQo4Al-maTkQ4uTK5iiQwk4Phh_dXBgn5wZc6ThT-0O3M7FJ76pj3b1B-Ukj40KUmfkjwknv4zXwgwFfuh7YyJlmwL6Hxj0xDPqweiKEOJY2K8oDsWg0v79ybNE8U0eru9MtbZ-64-3hQe2ZI3P22I1xH1b9T-ttoGtJv6K-jLwZeny2u1IFETgWTIJqgLAmIi8y_4XkjLNrwtRNqPuD0-OTablXXg9tmRVFRVsb_oB93TOiTdObCZg71aP6ghjMdf4wws9OYXmUtuwqAiA4OoIv9u_lbEiL41400VAnFxPPl70Bn8KrCb3RuTnDNwro5VlbColDMzngy4WrGsZQCBFm8AJXCmWtDGZUvpaoQKqijzY7gXh0j59WFE0cS0NbTx_9iS8-83XpjYW1SzOyNHVdo4r5S6MlKPtNLxIeQNSlwhhSI15ltaBWsLbuBCyCRvsOx5kYmDurKsy5GEuHB2uneZFnzvNh-aF1Padzhox9oes2udvjbcg7bVcGlqDMHYb47j-eoSGsLmw6StgUFg5zdkPFEJgD9-YwzeTPX3Pfl2nJ75p78UXNdZG7P3K0vYWznklbuykU-zkPPsoEGOlqLJbXvoERYB6YwoJs5HZSR0JzXVhgI_8W7FVUz4evT1cJDd-uvw0BfW2Y" alt="" style=" width: 50%;">
+						<p>Тинькофф Холл представляет<br>
+						  группа <span style="font-weight: bold;">Звери</span> со своей новой программой и старыми хитами!<br>
+						  <p>Цена: 2300р</p><br>
+						  <button id="btn2">купить билет</button></p> 
+						</div> 
+						<div id="tabs-3" style="background-color: #cd8e8e;"> <h2>Стендап: Дедищев, Чабдаров, Детков 14.07.2021</h2> 
+							<img src="https://im0-tub-ru.yandex.net/i?id=71c396487db8cbf7856d039444c346cd&n=13&exp=1" alt="" style=" width: 50%;">
+							<p>«Максимилианс» представляет<br>
+							  Стэндап комики <span style="font-weight: bold;">Дедищев, Чабдаров, Детков</span> со своей юмористической программой в Уфе!<br>
+							  <p>Цена: 2500р</p><br>
+							  <button id="btn3">купить билет</button></p> 
+							</div>
+							<div id="dialog1" title="Купить билет на концерт BrainStorm">
+								<form action="">
+								  ФИО: <input type="text"><br><br>
+								  Дата рождения:  <input type="text"  class="date"><br><br>
+								 Номер столика: <input type="text"  class="stol"><br><br>
+								  Количество билетов: <p style="display: inline;" id="sliderValue1"></p>
+								  <br><br>
+								  <div id="slider1" style="width: 100%;"></div> <br>
+								  email:  <input type="text"  class="date"><br><br>
+								  Промокод: <input type="text"><br><br>
+								 Сумма: <input type="text"id="price1" title="Нажмите и программа выведет сумму за билет (-ы)" ><br><br>
+								</form>
+								<input type="button" class="puy" value="Купить">
+							  </div>
+							  <div id="dialog2" title="Купить билет на концерт Звери">
+								<form action="">
+								  ФИО: <input type="text"><br><br>
+								  Дата рождения:  <input type="text"  class="date"><br><br>
+								  Номер столика: <input type="text"  class="stol"><br><br>
+								  Количество билетов: <p style="display: inline;" id="sliderValue2"></p>
+								  <br><br>
+								  <div id="slider2" style="width: 100%;"></div> <br>
+								  email:  <input type="text"  class="date"><br><br>
+								  Промокод: <input type="text"><br><br>
+								 Сумма: <input type="text"id="price2" title="Нажмите и программа выведет сумму за билет (-ы)" ><br><br>
+								</form>
+								<input type="button" class="puy" value="Купить">
+							  </div>
+							  <div id="dialog3" title="Купить билет на концерт Стендап: Дедищев, Чабдаров, Детков">
+								<form action="">
+								  ФИО: <input type="text"><br><br>
+								  Дата рождения:  <input type="text"  class="date"><br><br>
+								  Номер столика: <input type="text"  class="stol"><br><br>
+								  Количество билетов: <p style="display: inline;" id="sliderValue3"></p>
+								  <br><br>
+								  <div id="slider3" style="width: 100%;"></div> <br>
+								  email:  <input type="text"  class="date"><br><br>
+								  Промокод: <input type="text"><br><br>
+								 Сумма: <input type="text"id="price3" title="Нажмите и программа выведет сумму за билет (-ы)" ><br><br>
+								</form>
+								<input type="button" class="puy" value="Купить">
+							  </div>
+			</body>
+	</html> 
