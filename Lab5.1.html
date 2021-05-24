@@ -1,0 +1,22 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="jquery-ui.js"></script>
+<script src="jquery.myPlugin.js"></script>
+	</head>
+	<body>
+		<h1>Лабораторная работа №5</h1>
+		<h2>Ахметшин Р.Р. ПИ-320</h2>
+		<div id="start" title="Марио">Наш любимый Марио решил попрыгать, помогите ему в этом!!! Нажимайте на <span style="font-weight: 600;">пробел</span> и перепрыгивайте через преграду!</div>
+		<script type="text/javascript">
+		$( "#start" ).dialog({width: 600, buttons:{
+        "Начать игру": function() { $('#start').myPlugin('start'); $( "#start" ).dialog('close')}}});
+			 </script>
+			</body>
+	</html> 
